@@ -2,6 +2,16 @@
 public class King extends PlayingPiece {
 	
 	private boolean hasBeenMoved;
+	private String kingWhite = "\u2654";
+	private String kingBlack = "\u265A";
+	
+	public void getKing(int color) {
+		if(color == 1) {
+			System.out.println(kingWhite);
+		} else {
+			System.out.println(kingBlack);
+		}
+	}
 	
 	protected King(int x, int y, int color) {
 		super(x, y, color);

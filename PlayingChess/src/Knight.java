@@ -1,6 +1,18 @@
 
 public class Knight extends PlayingPiece {
 
+	private final String knightWhite = "\u2658";
+	private final String knightBlack = "\u265E";
+	
+	
+	public void getKnight(int color) {
+		if(color == 1) {
+			System.out.println(knightWhite);
+		} else {
+			System.out.println(knightBlack);
+		}
+	}
+	
 	protected Knight(int x, int y, int color) {
 		super(x, y, color);
 		

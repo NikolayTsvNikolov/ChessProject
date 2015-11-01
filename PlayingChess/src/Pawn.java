@@ -1,16 +1,31 @@
 
 public class Pawn extends PlayingPiece {
-	//we need to know if the figure has been moved or not
 		private boolean hasBeenMoved;
+	
+		private final String pawnWhite = "\u2659";
+		private final String pawnBlack = "\u265F";
+		
+		
+		public void getPawn(int color) {
+			if(color == 1) {
+				System.out.println(pawnWhite);
+			} else {
+				System.out.println(pawnBlack);
+			}
+		}
+		
 		
 		protected Pawn(int x, int y, int color) {
 			super(x, y, color);
+			if(color == 1) {
+				System.out.println(pawnWhite);
+			} else {
+				System.out.println(pawnBlack);
+			}
 			this.hasBeenMoved = false;
 		}
 
-		//we call the move method of the parent
-		//which returns if the move is made or not
-		//if the figure is moved we change the hasBeenMoved field
+	
 		@Override
 		public boolean move(int newX, int newY) {
 			if(super.move(newX, newY)) {
