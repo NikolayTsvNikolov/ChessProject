@@ -5,14 +5,19 @@ public class King extends PlayingPiece {
 	private String kingWhite = "\u2654";
 	private String kingBlack = "\u265A";
 	
-	public void getKing(int color) {
+	public String getKing(int color) {
 		if(color == 1) {
-			System.out.println(kingWhite);
+			return kingWhite;
 		} else {
-			System.out.println(kingBlack);
+			return kingBlack;
 		}
 	}
 	
+	@Override
+	public String getCharacter() {
+//		System.out.println(getKing(getColor()));
+		return getKing(getColor());
+	}
 	protected King(int x, int y, int color) {
 		super(x, y, color);
 		this.hasBeenMoved = false;

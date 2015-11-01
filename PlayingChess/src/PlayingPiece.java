@@ -17,6 +17,9 @@ public class PlayingPiece {
 		this.isAlive = true;
 	}
 
+	public String getCharacter(){
+		return " ";
+	}
 	
 	public boolean move(int newX, int newY) {
 		if (moveIsLegal(newX, newY)) {
@@ -27,7 +30,7 @@ public class PlayingPiece {
 		return false;
 	}
 
-		protected boolean moveIsLegal(int newX, int newY) {
+	protected boolean moveIsLegal(int newX, int newY) {
 		if (newX < 0 || newX > 7)
 			return false;
 		if (newY < 0 || newY > 7)
@@ -35,7 +38,6 @@ public class PlayingPiece {
 		return true;
 	}
 
-	
 	public int getX() {
 		return x;
 	}
