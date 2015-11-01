@@ -15,7 +15,7 @@ public class Pawn extends PlayingPiece {
 		}
 		
 		
-		protected Pawn(int x, int y, int color) {
+		public Pawn(int x, int y, int color) {
 			super(x, y, color);
 			if(color == 1) {
 				System.out.println(pawnWhite);
