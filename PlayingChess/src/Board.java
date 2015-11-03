@@ -8,28 +8,28 @@ public class Board {
 	public void initializePieces() {
 
 		for (int i = 0; i < 8; i++) { // draw pawns
-			board[i][2] = (new Pawn(i, 2, 1));
+			board[1][i] = (new Pawn(1, i, 1));
 		}
 		board[0][0] = (new Rook(0, 0, 1));
-		board[7][0] = (new Rook(7, 0, 1));
-		board[2][0] = (new Officer(2, 0, 1));
-		board[5][0] = (new Officer(5, 0, 1));
-		board[1][0] = (new Knight(1, 0, 1));
-		board[6][0] = (new Knight(6, 0, 1));
-		board[3][0] = (new Queen(3, 0, 1));
-		board[4][0] = (new King(4, 0, 1));
+		board[0][7] = (new Rook(0, 7, 1));
+		board[0][2] = (new Officer(0, 2, 1));
+		board[0][5] = (new Officer(0, 5, 1));
+		board[0][1] = (new Knight(0, 1, 1));
+		board[0][6] = (new Knight(0, 6, 1));
+		board[0][3] = (new Queen(0, 3, 1));
+		board[0][4] = (new King(0, 4, 1));
 
 		for (int i = 0; i < 8; i++) { // draw pawns
-			board[i][6] = (new Pawn(i, 6, 2));
+			board[6][i] = (new Pawn(6, i, 2));
 		}
-		board[0][7] = (new Rook(0, 7, 2));
+		board[7][0] = (new Rook(7, 0, 2));
 		board[7][7] = (new Rook(7, 7, 2));
-		board[2][7] = (new Officer(2, 7, 2));
-		board[5][7] = (new Officer(5, 7, 2));
-		board[1][7] = (new Knight(1, 7, 2));
-		board[6][7] = (new Knight(6, 7, 2));
-		board[3][7] = (new Queen(3, 7, 2));
-		board[4][7] = (new King(4, 7, 2));
+		board[7][2] = (new Officer(7, 2, 2));
+		board[7][5] = (new Officer(7, 5, 2));
+		board[7][1] = (new Knight(7, 1, 2));
+		board[7][6] = (new Knight(7, 6, 2));
+		board[7][3] = (new Queen(7, 3, 2));
+		board[7][4] = (new King(7, 4, 2));
 	}
 
 	protected Board() {
@@ -37,9 +37,13 @@ public class Board {
 		for (int i = 0; i < board.length; i++) {
 			System.out.println();
 			for (int j = 0; j < board.length; j++) {
-				if (board[i][j] == null) {
+				if (board[i][j] == null && j == 7) {
+					System.out.print("|" + " " + "|");
+				}else if (board[i][j] == null) {
 					System.out.print("|" + " ");
-				} else {
+				} else if (board[i][j] != null && j == 7){
+					System.out.print("|" + board[i][j].getCharacter() + "|");
+				}	else {
 					System.out.print("|" + board[i][j].getCharacter());
 
 				}

@@ -5,12 +5,17 @@ public class Knight extends PlayingPiece {
 	private final String knightBlack = "\u265E";
 	
 	
-	public void getKnight(int color) {
+	public String getKnight(int color) {
 		if(color == 1) {
-			System.out.println(knightWhite);
+			return knightWhite;
 		} else {
-			System.out.println(knightBlack);
+			return knightBlack;
 		}
+	}
+	
+	@Override
+	public String getCharacter() {
+	return getKnight(getColor());	
 	}
 	
 	protected Knight(int x, int y, int color) {

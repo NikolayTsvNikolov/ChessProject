@@ -6,12 +6,18 @@ public class Queen extends PlayingPiece {
 	private final String queenBlack = "\u265B";
 	
 	
-	public void getQueen(int color) {
+	public String getQueen(int color) {
 		if(color == 1) {
-			System.out.println(queenWhite);
+			return queenWhite;
 		} else {
-			System.out.println(queenBlack);
+			return queenBlack;
 		}
+	}
+	
+	@Override
+	public String getCharacter() {
+	
+		return getQueen(getColor());
 	}
 	
 	protected Queen(int x, int y, int color) {

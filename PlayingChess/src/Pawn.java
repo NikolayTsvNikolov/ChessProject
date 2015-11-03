@@ -6,22 +6,24 @@ public class Pawn extends PlayingPiece {
 		private final String pawnBlack = "\u265F";
 		
 		
-		public void getPawn(int color) {
+		
+		public String getPawn(int color) {
 			if(color == 1) {
-				System.out.println(pawnWhite);
+				return pawnWhite;
 			} else {
-				System.out.println(pawnBlack);
+				return pawnBlack;
 			}
+		}
+		
+		@Override
+		public String getCharacter() {
+		
+			return getPawn(getColor());
 		}
 		
 		
 		public Pawn(int x, int y, int color) {
 			super(x, y, color);
-			if(color == 1) {
-				System.out.println(pawnWhite);
-			} else {
-				System.out.println(pawnBlack);
-			}
 			this.hasBeenMoved = false;
 		}
 

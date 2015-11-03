@@ -7,21 +7,22 @@ public class Officer extends PlayingPiece{
 	
 	protected Officer(int x, int y, int color) {
 		super(x, y, color);
-		if (color == 1) {
-			System.out.println(officerWhite);
-		} else {
-			System.out.println(officerBlack);
-		}
 	}
 
-//	public static void getOfficer() {
-//		if (color == 1) {
-//			System.out.println(officerWhite);
-//		} else {
-//			System.out.println(officerBlack);
-//		}
+	public String getOfficer(int color) {
+		if (color == 1) {
+			return officerWhite;
+		} else {
+			return officerBlack;
+		}
 		
-//	}
+	}
+	
+	@Override
+	public String getCharacter() {
+		return getOfficer(getColor());
+	}
+	
 	@Override
 	protected boolean moveIsLegal(int newX, int newY) {
 		if(super.moveIsLegal(newX, newY)) {
