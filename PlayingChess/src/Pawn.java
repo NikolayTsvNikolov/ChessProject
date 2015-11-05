@@ -42,9 +42,9 @@ public class Pawn extends PlayingPiece {
 		protected boolean moveIsLegal(int newX, int newY) {
 			if(super.moveIsLegal(newX, newY)) {
 				if(hasBeenMoved) {
-					return getX() == newX && Math.abs(getY() - newY) == 1;
+					return getY() == newY && Math.abs(getX() - newX) == 1;
 				} else {
-					return getX() == newX && Math.abs(getY() - newY) < 3;
+					return getY() == newY && Math.abs(getX() - newX) < 3;
 				}
 			}
 			return false;

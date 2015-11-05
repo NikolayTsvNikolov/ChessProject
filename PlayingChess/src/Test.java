@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 
 public class Test {
 
@@ -15,8 +17,20 @@ public class Test {
 		
 //		Board board = new Board();
 //		//check if first move is white
-//		board.play(PlayingPiece.COLOR_WHITE, xFrom, yFrom, xTo, yTo);
-//		board.play(PlayingPiece.COLOR_BLACK, xFrom, yFrom, xTo, yTo);
+		
+		Scanner input = new Scanner(System.in);
+		System.out.println();
+		System.out.println("xForm: ");
+		int xFrom = input.nextInt();
+		System.out.println("yForm: ");
+		int yFrom = input.nextInt();
+		System.out.println("xTo: ");
+		int xTo = input.nextInt();
+		System.out.println("yTo: ");
+		int yTo = input.nextInt();
+		
+		board.play(PlayingPiece.COLOR_WHITE, xFrom, yFrom, xTo, yTo);
+		board.play(PlayingPiece.COLOR_BLACK, 7, 3, 3, 7);
 //		board.play(PlayingPiece.COLOR_WHITE, xFrom, yFrom, xTo, yTo);
 //		board.play(PlayingPiece.COLOR_BLACK, xFrom, yFrom, xTo, yTo);
 	

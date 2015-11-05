@@ -5,7 +5,7 @@ public class Board {
 
 	private final PlayingPiece[][] board = new PlayingPiece[8][8];
 
-	public void initializePieces() {
+	public PlayingPiece[][]initializePieces() {
 
 		for (int i = 0; i < 8; i++) { // draw pawns
 			board[1][i] = (new Pawn(1, i, 1));
@@ -30,24 +30,44 @@ public class Board {
 		board[7][6] = (new Knight(7, 6, 2));
 		board[7][3] = (new Queen(7, 3, 2));
 		board[7][4] = (new King(7, 4, 2));
+		return this.board;
 	}
 
 	protected Board() {
-			initializePieces();
+		initializePieces();
+		getBoard();
+	}
+
+	protected void getBoard() {
+	
+
 		for (int i = 0; i < board.length; i++) {
 			System.out.println();
 			for (int j = 0; j < board.length; j++) {
 				if (board[i][j] == null && j == 7) {
 					System.out.print("|" + " " + "|");
-				}else if (board[i][j] == null) {
+				} else if (board[i][j] == null) {
 					System.out.print("|" + " ");
-				} else if (board[i][j] != null && j == 7){
+				} else if (board[i][j] != null && j == 7) {
 					System.out.print("|" + board[i][j].getCharacter() + "|");
-				}	else {
+				} else {
 					System.out.print("|" + board[i][j].getCharacter());
 
 				}
 			}
+		}
+	}
+
+	public void play(int color, int fromX, int fromY, int toX, int toY) {
+
+		if (board[fromX][fromY].moveIsLegal(toX, toY)) {
+			if (board[fromX][fromY].move(toX, toY)) {
+				board[toX][toY] = board[fromX][fromY];
+				board[fromX][fromY] = null;
+				getBoard();
+
+			}
+
 		}
 
 	}
