@@ -2,7 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Board {
-
+	
+	
+	private boolean hasBeenMoved;
 	private final PlayingPiece[][] board = new PlayingPiece[8][8];
 
 	public PlayingPiece[][]initializePieces() {
@@ -59,7 +61,7 @@ public class Board {
 	}
 
 	public void play(int color, int fromX, int fromY, int toX, int toY) {
-
+		
 		if (board[fromX][fromY].moveIsLegal(toX, toY)) {
 			if (board[fromX][fromY].move(toX, toY)) {
 				board[toX][toY] = board[fromX][fromY];
